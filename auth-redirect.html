@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+  <title>Spendly Verification</title>
+  <meta charset="utf-8" />
+</head>
+<body>
+  <p>Opening Spendly...</p>
+
+  <script>
+    const deepLink =
+      "spendly-mobile://auth/callback" +
+      window.location.hash +
+      window.location.search;
+
+    window.location.href = deepLink;
+
+    setTimeout(() => {
+      document.body.innerHTML = `
+        <h2>Open Spendly</h2>
+        <p>If app did not open automatically, tap below:</p>
+        <a href="${deepLink}">Open App</a>
+      `;
+    }, 2000);
+  </script>
+</body>
+</html>
